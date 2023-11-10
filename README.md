@@ -1,16 +1,61 @@
 # flutter_expanded_in_row_widget
 
-A new Flutter project.
+https://api.flutter.dev/flutter/widgets/Expanded-class.html
 
-## Getting Started
+![image](https://github.com/luiscoco/flutter_expanded_in_row_widget/assets/32194879/ce409dac-f2b0-46fe-84de-ae1e30f6f522)
 
-This project is a starting point for a Flutter application.
+```dart
+import 'package:flutter/material.dart';
 
-A few resources to get you started if this is your first Flutter project:
+/// Flutter code sample for [Expanded].
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+void main() => runApp(const ExpandedApp());
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+class ExpandedApp extends StatelessWidget {
+  const ExpandedApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Expanded Row Sample'),
+        ),
+        body: const ExpandedExample(),
+      ),
+    );
+  }
+}
+
+class ExpandedExample extends StatelessWidget {
+  const ExpandedExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            flex: 2,
+            child: Container(
+              color: Colors.amber,
+              height: 100,
+            ),
+          ),
+          Container(
+            color: Colors.blue,
+            height: 100,
+            width: 50,
+          ),
+          Expanded(
+            child: Container(
+              color: Colors.amber,
+              height: 100,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+```
